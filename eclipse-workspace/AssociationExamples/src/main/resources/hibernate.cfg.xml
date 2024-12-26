@@ -6,7 +6,7 @@
 	<session-factory>
 		<!-- JDBC Database Connection Settings -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bank-system-db</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/country-db</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">Runalimisal@8530</property>
 
@@ -18,9 +18,19 @@
 
 		<!-- Mapping Resource -->
 		<!-- <mapping resource="Customer.hbm.xml" /> -->
-		<mapping class="com.prowings.association.onetoone.Customer" />
-		<mapping class="com.prowings.association.onetoone.BankAccount" />
+		
+		 <!-- <mapping class="com.prowings.association.onetoone.Customer" />
+		<mapping class="com.prowings.association.onetoone.BankAccount" />  -->
 
+		<!-- <mapping class="com.prowings.association.onetoone.bidrectional.Customer" />
+		<mapping class="com.prowings.association.onetoone.bidrectional.BankAccount" /> -->
+		
+		<!-- <mapping class="com.prowings.association.unidirectional.onetomany.Country" />
+        <mapping class="com.prowings.association.unidirectional.onetomany.State" /> -->
+        
+         <mapping class="com.prowings.association.bidirectional.onetomany.Country" />
+        <mapping class="com.prowings.association.bidirectional.onetomany.State" /> 
+        
 
 
 	</session-factory>

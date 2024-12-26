@@ -1,4 +1,4 @@
-package com.prowings.association.onetoone;
+package com.prowings.association.onetoone.bidrectional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 
 import com.prowings.utils.HibernateUtils;
 
-public class TestOneToOne {
+public class TestOneToOneBidirectional {
 
 	public static void main(String[] args) {
 
@@ -28,11 +28,12 @@ public class TestOneToOne {
 		Session session = sessionfactory.openSession();
 		Transaction txn = session.beginTransaction();
 			
-		session.persist(customer1);
+//		session.persist(customer1);
 		session.persist(customer2);
 		session.persist(customer3);
 
 		Customer featchedCustomer = session.get(Customer.class, 1);
+		session.remove(customer1);
 		System.out.println(featchedCustomer);
 
 
